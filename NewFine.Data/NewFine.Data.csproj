@@ -43,5 +43,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepositoryBase.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NewFine.Utils\NewFine.Utils.csproj">
+      <Project>{e394286e-0ef8-442b-8250-afbd736850d9}</Project>
+      <Name>NewFine.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

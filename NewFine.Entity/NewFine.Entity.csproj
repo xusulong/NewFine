@@ -44,6 +44,7 @@
     <Compile Include="Infrastructure\IDeleteAudited.cs" />
     <Compile Include="Infrastructure\IEntity.cs" />
     <Compile Include="Infrastructure\IModificationAudited.cs" />
+    <Compile Include="IRepository\IUserRepository.cs" />
     <Compile Include="LogEntity.cs" />
     <Compile Include="OperatorModel.cs" />
     <Compile Include="OperatorProvider.cs" />
@@ -51,6 +52,10 @@
     <Compile Include="UserEntity.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NewFine.Data\NewFine.Data.csproj">
+      <Project>{e80be19f-373e-4d0d-84f2-8a9479b4c85a}</Project>
+      <Name>NewFine.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NewFine.Utils\NewFine.Utils.csproj">
       <Project>{e394286e-0ef8-442b-8250-afbd736850d9}</Project>
       <Name>NewFine.Utils</Name>
