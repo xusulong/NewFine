@@ -23,5 +23,14 @@ namespace NewFine.Utils
         {
             return Json == null ? default(T) : JsonConvert.DeserializeObject<T>(Json);
         }
+        public static string ToJson(this object obj)
+        {
+            var timeConverter = new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" };
+            return JsonConvert.SerializeObject(obj, timeConverter);
+        }
+        public static JObject ToJObject(this string Json)
+        {
+            return Json == null ? JObject.Parse("{}") : JObject.Parse(Json.Replace("&nbsp;", ""));
+        }
     }
 }

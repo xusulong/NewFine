@@ -33,7 +33,7 @@ namespace NewFine.Entity
         public void Modify(string keyValue)
         {
             var entity = this as IModificationAudited;
-            entity.F_ID = keyValue;
+            entity.F_Id = keyValue;
             var LoginInfo = OperatorProvider.Provider.GetCurrent();
             if (LoginInfo != null)
             {

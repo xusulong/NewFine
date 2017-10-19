@@ -20,6 +20,47 @@ namespace NewFine.Utils
     public static partial class Ext
     {
         /// <summary>
+        /// 转换为整型
+        /// </summary>
+        /// <param name="data">数据</param>
+        public static int ToInt(this object data)
+        {
+            if (data == null)
+                return 0;
+            int result;
+            var success = int.TryParse(data.ToString(), out result);
+            if (success)
+                return result;
+            try
+            {
+                return Convert.ToInt32(ToDouble(data, 0));
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+        /// <summary>
+        /// 转换为双精度浮点数,并按指定的小数位4舍5入
+        /// </summary>
+        /// <param name="data">数据</param>
+        /// <param name="digits">小数位数</param>
+        public static double ToDouble(this object data, int digits)
+        {
+            return Math.Round(ToDouble(data), digits);
+        }
+        /// <summary>
+        /// 转换为双精度浮点数
+        /// </summary>
+        /// <param name="data">数据</param>
+        public static double ToDouble(this object data)
+        {
+            if (data == null)
+                return 0;
+            double result;
+            return double.TryParse(data.ToString(), out result) ? result : 0;
+        }
+        /// <summary>
         /// 扩展方法，string是否为空
         /// </summary>
         /// <param name="value"></param>
@@ -38,6 +79,17 @@ namespace NewFine.Utils
             {
                 return true;
             }
+        }
+        /// <summary>
+        /// 转换为日期
+        /// </summary>
+        /// <param name="data">数据</param>
+        public static DateTime ToDate(this object data)
+        {
+            if (data == null)
+                return DateTime.MinValue;
+            DateTime result;
+            return DateTime.TryParse(data.ToString(), out result) ? result : DateTime.MinValue;
         }
     }
 }

@@ -35,5 +35,19 @@ namespace NewFine.Entity
             }
             return operatorModel;
         }
+        public void AddCurrent(OperatorModel operatorModel)
+        {
+            if (LoginProvider == "Cookie")
+            {
+                WebHelper.WriteCookie(LoginUserKey, DESEncrypt.Encrypt(operatorModel.ToJson()), 60);
+            }
+            else
+            {
+                WebHelper.WriteSession(LoginUserKey, DESEncrypt.Encrypt(operatorModel.ToJson()));
+            }
+            WebHelper.WriteCookie("newfine_mac",Md5.md5(Net.GetMacByNetworkInterface().ToJson(),32));
+            WebHelper.WriteCookie("newfine_licence", Licence.GetLicence());
+               
+        }
     }
 }
