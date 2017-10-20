@@ -11,6 +11,12 @@ namespace NewFine.Web.Controllers
 {
     public class LoginController : Controller
     {
+        public virtual ActionResult Index()
+        {
+            var test = string.Format("{0:E2}", 1);
+            return View();
+        }
+
         /// <summary>
         /// 登录页面的验证码。加密存入session
         /// </summary>
@@ -60,7 +66,16 @@ namespace NewFine.Web.Controllers
                     logEntity.F_Description = "登录成功";
                     new LogApp().WriteDbLog(logEntity);
                 }
-
+                return Content(new AjaxResult { stste = ResultType.success.ToString(), message = "登录成功。" }.ToJson());
+            }
+            catch (Exception ex)
+            {
+                logEntity.F_Account = username;
+                logEntity.F_NickName = username;
+                logEntity.F_Result = false;
+                logEntity.F_Description = "登录失败，" + ex.Message;
+                new LogApp().WriteDbLog(logEntity);
+                return Content(new AjaxResult { stste = ResultType.error.ToString(), message = ex.Message }.ToJson());
             }
         }
 
