@@ -66,7 +66,7 @@ namespace NewFine.Web.Controllers
                     logEntity.F_Description = "登录成功";
                     new LogApp().WriteDbLog(logEntity);
                 }
-                return Content(new AjaxResult { stste = ResultType.success.ToString(), message = "登录成功。" }.ToJson());
+                return Content(new AjaxResult { state = ResultType.success.ToString(), message = "登录成功。" }.ToJson());
             }
             catch (Exception ex)
             {
@@ -75,7 +75,7 @@ namespace NewFine.Web.Controllers
                 logEntity.F_Result = false;
                 logEntity.F_Description = "登录失败，" + ex.Message;
                 new LogApp().WriteDbLog(logEntity);
-                return Content(new AjaxResult { stste = ResultType.error.ToString(), message = ex.Message }.ToJson());
+                return Content(new AjaxResult { state = ResultType.error.ToString(), message = ex.Message }.ToJson());
             }
         }
 

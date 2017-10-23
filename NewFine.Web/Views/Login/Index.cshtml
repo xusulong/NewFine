@@ -16,13 +16,13 @@
 </head>
 <body>
     <div style="position: absolute; z-index: 999; top: 20px; left: 20px; color: #fff; font-size: 13px; line-height: 22px;">
-        用户名 admin 或 guest，密码 0000，请勿在系统内发表不文明信息
+        用户名 admin，密码 0000，请勿在系统内发表不文明信息
     </div>
     <div class="wrapper">
         <div class="container">
             <div class="logo">
                 <i class="fa fa-modx"></i>
-                <h1><span>NFine</span>快速开发平台</h1>
+                <h1><span>NewFine</span>快速开发平台</h1>
             </div>
             <form class="form">
                 <div class="row">
@@ -97,6 +97,7 @@
                             type: "post",
                             dataType: "json",
                             success: function (data) {
+                                console.log(data);
                                 if (data.state == "success") {
                                     $("#login_button").find('span').html("登录成功，正在跳转...");
                                     window.setTimeout(function () {

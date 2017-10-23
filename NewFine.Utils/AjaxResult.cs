@@ -22,7 +22,7 @@ namespace NewFine.Utils
     /// </summary>
     public class AjaxResult
     {
-        public object stste { get; set; }
+        public object state { get; set; }
         public string message { get; set; }
         public object data { get; set; } 
     }
