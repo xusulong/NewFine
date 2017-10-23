@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewFine.Data", "NewFine.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewFine.Repository", "NewFine.Repository\NewFine.Repository.csproj", "{028138A2-1F29-4640-91EB-A24ED8C4AB4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewFine.Mapping", "NewFine.Mapping\NewFine.Mapping.csproj", "{B831CDA7-BC66-4367-A5BF-6C32C58C2083}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{028138A2-1F29-4640-91EB-A24ED8C4AB4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{028138A2-1F29-4640-91EB-A24ED8C4AB4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{028138A2-1F29-4640-91EB-A24ED8C4AB4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B831CDA7-BC66-4367-A5BF-6C32C58C2083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B831CDA7-BC66-4367-A5BF-6C32C58C2083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B831CDA7-BC66-4367-A5BF-6C32C58C2083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B831CDA7-BC66-4367-A5BF-6C32C58C2083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

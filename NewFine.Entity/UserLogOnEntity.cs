@@ -29,9 +29,9 @@ namespace NewFine.Entity
         public DateTime? F_LockEndDate { get; set; }
         public DateTime? F_FirstVisitTime { get; set; }
         public DateTime? F_PreviousVisitTime { get; set; }
-        public DateTime? F_LastVisiTime { get; set; }
-        public DateTime? F_ChanePasswordDate { get; set; }
-        public bool? MultiUserLogIn { get; set; }
+        public DateTime? F_LastVisitTime { get; set; }
+        public DateTime? F_ChangePasswordDate { get; set; }
+        public bool? F_MultiUserLogIn { get; set; }
         public int? F_LogOnCount { get; set; }
         public bool? F_UserOnLine { get; set; }
         public string F_Question { get; set; }
