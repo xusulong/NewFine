@@ -22,7 +22,7 @@ using NewFine.Utils;
 namespace NewFine.Repository
 {
 	/// <summary>
-    /// 仓库动作的时限
+    /// 仓库动作的实现
     /// </summary>
     public class UserRepository : RepositoryBase<UserEntity>, IUserRepository
     {

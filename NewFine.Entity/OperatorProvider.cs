@@ -25,14 +25,22 @@ namespace NewFine.Entity
         public OperatorModel GetCurrent()
         {
             OperatorModel operatorModel = new OperatorModel();
-            if (LoginProvider == "Cookie")
+            try
             {
-                operatorModel = DESEncrypt.Decrypt(WebHelper.GetCookie(LoginUserKey).ToString()).ToObject<OperatorModel>();
+                if (LoginProvider == "Cookie")
+                {
+                    operatorModel = DESEncrypt.Decrypt(WebHelper.GetCookie(LoginUserKey).ToString()).ToObject<OperatorModel>();
+                }
+                else
+                {
+                    operatorModel = DESEncrypt.Decrypt(WebHelper.GetSession(LoginUserKey).ToString()).ToObject<OperatorModel>();
+                }
             }
-            else
+            catch
             {
-                operatorModel = DESEncrypt.Decrypt(WebHelper.GetSession(LoginUserKey).ToString()).ToObject<OperatorModel>();
+
             }
+
             return operatorModel;
         }
         public void AddCurrent(OperatorModel operatorModel)

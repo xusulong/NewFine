@@ -47,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemsDetailMap.cs" />
+    <Compile Include="ItemsMap.cs" />
     <Compile Include="LogMap.cs" />
+    <Compile Include="OrganizeMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserLogOnMap.cs" />
     <Compile Include="UserMap.cs" />
