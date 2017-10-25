@@ -17,7 +17,6 @@ using System.Threading.Tasks;
 using NewFine.Data;
 using NewFine.Entity;
 using NewFine.Entity.IRepository;
-using NewFine.Data.Repository;
 using NewFine.Utils;
 namespace NewFine.Repository
 {

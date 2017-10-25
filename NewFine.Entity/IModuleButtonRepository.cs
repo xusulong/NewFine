@@ -2,9 +2,9 @@
  * Copyright (c) 2017 China All Rights Reserved.
  * CLR版本： 4.0.30319.42000
  * 机器名称：HZWNB147-PC
- * 唯一标识：0185422e-6eb2-4f8a-a49a-8cab858d59a8
+ * 唯一标识：08c75cc0-a43e-4aa7-b5d5-2d9cda62180f
  * 创建人：  HZWNB147
- * 创建时间：2017/10/24 17:26:36
+ * 创建时间：2017/10/25 9:47:23
  * 描述：
  * 
  * 
@@ -15,11 +15,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NewFine.Data;
+using NewFine.Entity;
+
 namespace NewFine.Entity
 {
-    public interface IRoleRepository : IRepositoryBase<RoleEntity>
+    public interface IModuleButtonRepository : IRepositoryBase<ModuleButtonEntity>
     {
-        void DeleteForm(string keyValue);
-        void SubmitForm(RoleEntity roleEntity, List<RoleAuthorizeEntity> roleAuthorizeEntitys, string keyValue);
+        void SubmitCloneButton(List<ModuleButtonEntity> entitys);
     }
 }

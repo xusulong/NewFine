@@ -43,10 +43,14 @@
     <Compile Include="ItemsDetailRepository.cs" />
     <Compile Include="ItemsRepository.cs" />
     <Compile Include="LogRepository.cs" />
+    <Compile Include="ModuleButtonRepository.cs" />
+    <Compile Include="ModuleRepository.cs" />
     <Compile Include="OrganizeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RoleAuthorizeRepository.cs" />
+    <Compile Include="RoleRepository.cs" />
     <Compile Include="UserLogOnRepository.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>

@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using NewFine.Application;
 using NewFine.Entity;
+using NewFine.Utils;
+using System.Text;
 
 namespace NewFine.Web.Controllers
 {
@@ -25,6 +27,7 @@ namespace NewFine.Web.Controllers
                 authorizeMenu = this.GetMenuList(),
                 authorizeButton = this.GetMenuButtonList(),
             };
+            return Content(data.ToJson());
         }
 
         private object GetDataItemList()

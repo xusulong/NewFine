@@ -43,9 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DutyApp.cs" />
     <Compile Include="Infrastructure\DbLogType.cs" />
     <Compile Include="ItemsApp.cs" />
+    <Compile Include="ModuleApp.cs" />
+    <Compile Include="ModuleButtonApp.cs" />
     <Compile Include="OrganizeApp.cs" />
+    <Compile Include="RoleApp.cs" />
+    <Compile Include="RoleAuthorizeApp.cs" />
     <Compile Include="SystemManage\ItemsDetailApp.cs" />
     <Compile Include="LogApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

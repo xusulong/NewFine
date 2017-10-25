@@ -19,7 +19,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Reflection;
 using System.Text.RegularExpressions;
-namespace NewFine.Data.Repository
+namespace NewFine.Data
 {
     /// <summary>
     /// 仓储实现

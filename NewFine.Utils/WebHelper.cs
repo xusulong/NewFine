@@ -113,6 +113,16 @@ namespace NewFine.Utils
                 return string.Empty;
             return HttpContext.Current.Session[key] as string ;
         }
+        /// <summary>
+        /// 删除指定Session
+        /// </summary>
+        /// <param name="key">Session的键名</param>
+        public static void RemoveSession(string key)
+        {
+            if (key.IsEmpty())
+                return;
+            HttpContext.Current.Session.Contents.Remove(key);
+        }
         #endregion
     }
 }

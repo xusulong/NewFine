@@ -10,6 +10,7 @@
  * 
  ************************************************************************************/
 using NewFine.Utils;
+using System;
 namespace NewFine.Entity
 {
 
@@ -24,7 +25,7 @@ namespace NewFine.Entity
 
         public OperatorModel GetCurrent()
         {
-            OperatorModel operatorModel = new OperatorModel();
+            OperatorModel operatorModel =null;
             try
             {
                 if (LoginProvider == "Cookie")
@@ -35,11 +36,11 @@ namespace NewFine.Entity
                 {
                     operatorModel = DESEncrypt.Decrypt(WebHelper.GetSession(LoginUserKey).ToString()).ToObject<OperatorModel>();
                 }
-            }
-            catch
-            {
+
 
             }
+            catch(Exception e)
+            { }
 
             return operatorModel;
         }
@@ -56,6 +57,18 @@ namespace NewFine.Entity
             WebHelper.WriteCookie("newfine_mac",Md5.md5(Net.GetMacByNetworkInterface().ToJson(),32));
             WebHelper.WriteCookie("newfine_licence", Licence.GetLicence());
                
+        }
+
+        public void RemoveCurrent()
+        {
+            if (LoginProvider == "Cookie")
+            {
+                WebHelper.RemoveCookie(LoginUserKey.Trim());
+            }
+            else
+            {
+                WebHelper.RemoveSession(LoginUserKey.Trim());
+            }
         }
     }
 }

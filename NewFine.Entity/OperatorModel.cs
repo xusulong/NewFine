@@ -29,7 +29,7 @@ namespace NewFine.Entity
         public string LoginIPAddress { get; set; }
         public string LoginIPAddressName { get; set; }
         public string LoginToken { get; set; }
-        public DateTime LoginTime { get; set; }
+        public DateTime? LoginTime { get; set; }
         public bool IsSystem { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
 using NewFine.Utils;
-namespace NewFine.Data.Repository
+namespace NewFine.Data
 {
     public interface IRepositoryBase :IDisposable
     {
