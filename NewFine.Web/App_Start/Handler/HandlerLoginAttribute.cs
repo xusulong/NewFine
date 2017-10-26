@@ -3,6 +3,9 @@ using NewFine.Entity;
 using NewFine.Utils;
 namespace NewFine.Web
 {
+    /// <summary>
+    /// 定义鉴权特性
+    /// </summary>
     public class HandlerLoginAttribute : AuthorizeAttribute
     {
         public bool Ignore = true;

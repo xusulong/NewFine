@@ -3,6 +3,9 @@ using NewFine.Utils;
 
 namespace NewFine.Web
 {
+    /// <summary>
+    /// 在cshtml中出现错误，则触发在这个Error处理。返回状态码200和相关错误信息
+    /// </summary>
     public class HandlerErrorAttribute: HandleErrorAttribute
     {
         public override void OnException(ExceptionContext context)
