@@ -55,6 +55,12 @@ namespace NewFine.Application
             }
             service.SubmitForm(userEntity, userLogOnEntity, keyValue);
         }
+        /// <summary>
+        /// 检查用户名，密码。登录成功之外，用抛异常的方式，向调用者
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public UserEntity CheckLogIn(string username,string password)
         {
             UserEntity userEntity = service.FindEntity(t => t.F_Account == username);
