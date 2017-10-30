@@ -12,6 +12,8 @@ namespace NewFine.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            //这里抛出的异常会被HandlerErrorAttribute处理掉
+            //throw new Exception("Test");
             return View();
         }
         [HttpGet]

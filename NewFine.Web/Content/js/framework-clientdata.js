@@ -1,6 +1,7 @@
 ﻿var clients = [];
 $(function () {
     clients = $.clientsInit();
+    console.log(clients);
 })
 $.clientsInit = function () {
     var dataJson = {
