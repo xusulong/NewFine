@@ -18,6 +18,17 @@ namespace NewFine.Utils
 {
     public static partial class ExtLinq
     {
+
+        public static Expression Property(this Expression expression, string propertyName)
+        {
+            return Expression.Property(expression, propertyName);
+        }
+        public static Expression<T> ToLambda<T>(this Expression body, params ParameterExpression[] parameters)
+        {
+            return Expression.Lambda<T>(body,parameters);
+        }
+
+
         public static Expression<Func<T, bool>> True<T>() { return param => true; }
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> first, Expression<Func<T, bool>> second)
         {

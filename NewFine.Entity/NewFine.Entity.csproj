@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TreeGrid.cs" />
     <Compile Include="ViewModel\AuthorizeActionModel.cs" />
     <Compile Include="IModuleButtonRepository.cs" />
     <Compile Include="IModuleRepository.cs" />
@@ -68,6 +69,10 @@
     <Compile Include="RoleEntity.cs" />
     <Compile Include="UserEntity.cs" />
     <Compile Include="UserLogOnEntity.cs" />
+    <Compile Include="Web\Three\TreeSelect.cs" />
+    <Compile Include="Web\Three\TreeSelectModel.cs" />
+    <Compile Include="Web\TreeGridModel.cs" />
+    <Compile Include="Web\TreeQuery.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewFine.Data\NewFine.Data.csproj">

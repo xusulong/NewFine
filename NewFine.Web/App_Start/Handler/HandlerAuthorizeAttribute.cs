@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using NewFine.Entity;
 using NewFine.Utils;
 using NewFine.Application;
 
-namespace NewFine.Web.App_Start.Handler
+namespace NewFine.Web
 {
+    /// <summary>
+    /// 检验菜单访问权限
+    /// </summary>
     public class HandlerAuthorizeAttribute:ActionFilterAttribute
     {
         public bool Ignore { get; set; }
@@ -28,7 +32,13 @@ namespace NewFine.Web.App_Start.Handler
                 return;
             }
 
-            if(!this.actionau)
+            if (!this.ActionAuthorize(filterContext))
+            {
+                StringBuilder sbScript = new StringBuilder();
+                sbScript.Append("<script type='text/javascript'>alter(权限不足，拒绝访问);</script>");
+                filterContext.Result = new ContentResult() { Content = sbScript.ToString() };
+                return;
+            }
         }
         private bool ActionAuthorize(ActionExecutingContext filterContext)
         {
