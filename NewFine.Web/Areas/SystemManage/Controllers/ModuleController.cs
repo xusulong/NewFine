@@ -8,7 +8,7 @@ using NewFine.Entity;
 using NewFine.Utils;
 
 
-namespace NewFine.Web.Controllers
+namespace NewFine.Web.Areas.SystemManage.Controllers
 {
     public class ModuleController : ControllerBase
     {

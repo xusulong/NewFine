@@ -153,12 +153,18 @@
     <Compile Include="App_Start\Handler\HandlerErrorAttribute.cs" />
     <Compile Include="App_Start\Handler\HandlerLoginAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\SystemManage\SystemManageAreaRegistration.cs" />
     <Compile Include="Controllers\ClientsDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Areas\SystemManage\Controllers\ModuleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -426,19 +432,24 @@
     <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
     <Folder Include="Views\ClientsData\" />
     <Folder Include="Views\ControllerBase\" />
     <Folder Include="Views\Module\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Configs\log4net.config" />
+    <Content Include="Areas\SystemManage\Views\Module\index.cshtml" />
+    <Content Include="Areas\SystemManage\Web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Form.cshtml" />
     <Content Include="Views\Shared\_Index.cshtml" />
     <Content Include="Views\Shared\_LayoutIndex.cshtml" />
     <Content Include="Views\Home\Default.cshtml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewFine.Application\NewFine.Application.csproj">
