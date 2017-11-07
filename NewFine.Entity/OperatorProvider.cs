@@ -25,7 +25,7 @@ namespace NewFine.Entity
 
         public OperatorModel GetCurrent()
         {
-            OperatorModel operatorModel =null;
+            OperatorModel operatorModel =new OperatorModel();
             try
             {
                 if (LoginProvider == "Cookie")

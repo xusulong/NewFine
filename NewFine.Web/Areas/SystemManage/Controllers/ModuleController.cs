@@ -17,7 +17,7 @@ namespace NewFine.Web.Areas.SystemManage.Controllers
 
         [HttpGet]
         [HandlerAjaxOnly]
-        public ActionResult GetThreeSelectJson()
+        public ActionResult GetTreeSelectJson()
         {
             var data = moduleApp.GetList();
             var treeList = new List<TreeSelectModel>();

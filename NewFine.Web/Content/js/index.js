@@ -146,6 +146,7 @@ $(function ($) {
     });
     $(window).load(function () {
         window.setTimeout(function () {
+            //三个点的等待加载，定时300ms隐藏
             $('#ajax-loader').fadeOut();
         }, 300);
     });

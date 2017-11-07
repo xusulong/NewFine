@@ -6,6 +6,7 @@ $.reload = function () {
     location.reload();
     return false;
 }
+//操作中的提示，比如正在加载等。。。
 $.loading = function (bool, text) {
     var $loadingpage = top.$("#loadingPage");
     var $loadingtext = $loadingpage.find('.loading-content');
@@ -92,6 +93,7 @@ $.modalOpen = function (options) {
     var options = $.extend(defaults, options);
     var _width = top.$(window).width() > parseInt(options.width.replace('px', '')) ? options.width : top.$(window).width() + 'px';
     var _height = top.$(window).height() > parseInt(options.height.replace('px', '')) ? options.height : top.$(window).height() + 'px';
+    debugger;
     top.layer.open({
         id: options.id,
         type: 2,
@@ -109,6 +111,7 @@ $.modalOpen = function (options) {
         }
     });
 }
+//构造确认取消模态窗口，第一个参数是敞口内容，第二个是回调函数
 $.modalConfirm = function (content, callBack) {
     top.layer.confirm(content, {
         icon: "fa-exclamation-circle",
@@ -213,7 +216,9 @@ $.submitForm = function (options) {
         });
     }, 500);
 }
+//删除操作，调出确认窗口
 $.deleteForm = function (options) {
+    //配置模态窗口的可配置项
     var defaults = {
         prompt: "注：您确定要删除该项数据吗？",
         url: "",
@@ -222,13 +227,18 @@ $.deleteForm = function (options) {
         success: null,
         close: true
     };
+    //$.extend()在写jquery插件时常用，下面的例子是，返回options合并到defaults中的结果
     var options = $.extend(defaults, options);
+    //校验页面提交的正确性
     if ($('[name=__RequestVerificationToken]').length > 0) {
         options.param["__RequestVerificationToken"] = $('[name=__RequestVerificationToken]').val();
     }
+    //弹出确认框
     $.modalConfirm(options.prompt, function (r) {
         if (r) {
+            //加载提示条
             $.loading(true, options.loading);
+            debugger;
             window.setTimeout(function () {
                 $.ajax({
                     url: options.url,

@@ -438,7 +438,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Configs\log4net.config" />
-    <Content Include="Areas\SystemManage\Views\Module\index.cshtml" />
     <Content Include="Areas\SystemManage\Web.config" />
     <Content Include="Areas\SystemManage\Views\Module\Details.cshtml" />
     <Content Include="Areas\SystemManage\Views\Module\Form.cshtml" />
