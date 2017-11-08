@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Plan\DailyPlanMapping.cs" />
     <Compile Include="ItemsDetailMap.cs" />
     <Compile Include="ItemsMap.cs" />
     <Compile Include="LogMap.cs" />

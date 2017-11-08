@@ -155,6 +155,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\SystemManage\SystemManageAreaRegistration.cs" />
     <Compile Include="Controllers\ClientsDataController.cs" />
+    <Compile Include="Controllers\ModuleButtonController.cs" />
+    <Compile Include="Controllers\DailyPlanController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Areas\SystemManage\Controllers\ModuleController.cs" />
@@ -434,6 +436,7 @@
   <ItemGroup>
     <Folder Include="Views\ClientsData\" />
     <Folder Include="Views\ControllerBase\" />
+    <Folder Include="Views\Controllers\" />
     <Folder Include="Views\Module\" />
   </ItemGroup>
   <ItemGroup>
@@ -441,6 +444,7 @@
     <Content Include="Areas\SystemManage\Web.config" />
     <Content Include="Areas\SystemManage\Views\Module\Details.cshtml" />
     <Content Include="Areas\SystemManage\Views\Module\Form.cshtml" />
+    <Content Include="Areas\SystemManage\Views\Module\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Form.cshtml" />
@@ -452,11 +456,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\DailyPlan\Index.cshtml" />
+    <Content Include="Views\ModuleButton\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewFine.Application\NewFine.Application.csproj">
       <Project>{0d916d8f-57c2-4ae4-9578-1ab36ee963e2}</Project>
       <Name>NewFine.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NewFine.Data\NewFine.Data.csproj">
+      <Project>{e80be19f-373e-4d0d-84f2-8a9479b4c85a}</Project>
+      <Name>NewFine.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\NewFine.Entity\NewFine.Entity.csproj">
       <Project>{d230aa4a-ae28-494c-abff-b1b336ed883e}</Project>

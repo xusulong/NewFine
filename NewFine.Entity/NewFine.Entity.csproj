@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Plan\IDailyPlanRepository.cs" />
+    <Compile Include="Plan\DailyPlanEntity.cs" />
     <Compile Include="TreeGrid.cs" />
     <Compile Include="ViewModel\AuthorizeActionModel.cs" />
     <Compile Include="IModuleButtonRepository.cs" />

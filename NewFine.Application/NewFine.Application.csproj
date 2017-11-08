@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Plan\DailyPlanApp.cs" />
     <Compile Include="DutyApp.cs" />
     <Compile Include="Infrastructure\DbLogType.cs" />
     <Compile Include="ItemsApp.cs" />

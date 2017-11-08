@@ -28,6 +28,14 @@ namespace NewFine.Entity
             sb.Append("]");
             return sb.ToString();
         }
+        public static string TreeSelectJson(this List<TreeSelectModel> data)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("[");
+            sb.Append(TreeSelectJson(data,"0",""));
+            sb.Append("]");
+            return sb.ToString();
+        }
 
         private static string TreeSelectJson(List<TreeSelectModel> data, string parentId, string blank)
         {
