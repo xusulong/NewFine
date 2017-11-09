@@ -70,6 +70,8 @@ namespace NewFine.Application
             }
             else
             {
+                roleEntity.AddTime = DateTime.Now;
+                roleEntity.DeadLine = DateTime.Now.AddDays(1);
                 service.Insert(roleEntity);
             }
 

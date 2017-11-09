@@ -47,6 +47,7 @@ namespace NewFine.Web.Controllers
                 treeModel.isLeaf = hasChildren;
                 treeModel.parentId = item.F_ParentId;
                 treeModel.expanded = hasChildren;
+                treeModel.entityJson = item.ToJson();
                 treeList.Add(treeModel);
             }
             return Content(treeList.TreeGridJson());
@@ -84,7 +85,7 @@ namespace NewFine.Web.Controllers
         }
         [HttpGet]
         [HandlerAjaxOnly]
-        public ActionResult GetCloneButonTreeJson()
+        public ActionResult GetCloneButtonTreeJson()
         {
             var moduledata = moduleApp.GetList();
             var buttondata = moduleButtonApp.GetList();
@@ -107,7 +108,7 @@ namespace NewFine.Web.Controllers
                 TreeViewModel tree = new TreeViewModel();
                 bool hasChildren = buttondata.Count(t => t.F_ParentId == item.F_Id) == 0 ? false : true;
                 tree.id = item.F_Id;
-                tree.value = item.F_FullName;
+                tree.text = item.F_FullName;
                 tree.value = item.F_EnCode;
                 if (item.F_ParentId == "0")
                 {

@@ -93,7 +93,6 @@ $.modalOpen = function (options) {
     var options = $.extend(defaults, options);
     var _width = top.$(window).width() > parseInt(options.width.replace('px', '')) ? options.width : top.$(window).width() + 'px';
     var _height = top.$(window).height() > parseInt(options.height.replace('px', '')) ? options.height : top.$(window).height() + 'px';
-    debugger;
     top.layer.open({
         id: options.id,
         type: 2,
@@ -400,18 +399,27 @@ $.fn.bindSelect = function (options) {
         });
     }
 }
+//按钮的权限管理
 $.fn.authorizeButton = function () {
-    var moduleId = top.$(".NFine_iframe:visible").attr("id").substr(6);
-    var dataJson = top.clients.authorizeButton[moduleId];
+    var moduleId = top.$(".NFine_iframe:visible").attr("id").substr(6);//得到当前iframe的moduleId
+    var dataJson = top.clients.authorizeButton[moduleId];//取得当前页面有效的按钮
     var $element = $(this);
-    $element.find('a[authorize=yes]').attr('authorize', 'no');
+    $element.find('a[authorize=yes]').attr('authorize', 'no');//先把所有的按钮置为[authorize=no].
     if (dataJson != undefined) {
         $.each(dataJson, function (i) {
-            $element.find("#" + dataJson[i].F_EnCode).attr('authorize', 'yes');
+            $element.find("#" + dataJson[i].F_EnCode).attr('authorize', 'yes');//有效的按钮置为[authorize=yes]
         });
     }
+    //检索li元素，找到带有split类名前一个同胞元素，即竖线分隔符
+    //console.log($element.find("[authorize=no]").parents('li').prev('.split'));
     $element.find("[authorize=no]").parents('li').prev('.split').remove();
+
+    //删除li,即可见的按钮
+    //console.log($element.find("[authorize=no]").parents('li'));
     $element.find("[authorize=no]").parents('li').remove();
+
+    //删除其他带有authorize=no的元素
+    //console.log($element.find('[authorize=no]'));
     $element.find('[authorize=no]').remove();
 }
 $.fn.dataGrid = function (options) {

@@ -39,6 +39,12 @@ namespace NewFine.Web.Controllers
             dailyPlanApp.SubmitForm(userEntity, keyValue);
             return Success("操作成功。");
         }
-
+        [HttpGet]
+        [HandlerAjaxOnly]
+        public ActionResult GetFormJson(string keyValue)
+        {
+            var data = dailyPlanApp.GetForm(keyValue);
+            return Content(data.ToJson());
+        }
     }
 }

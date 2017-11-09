@@ -458,6 +458,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\DailyPlan\Index.cshtml" />
     <Content Include="Views\ModuleButton\Index.cshtml" />
+    <Content Include="Views\ModuleButton\Form.cshtml" />
+    <Content Include="Views\ModuleButton\CloneButton.cshtml" />
+    <Content Include="Views\DailyPlan\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewFine.Application\NewFine.Application.csproj">
