@@ -53,7 +53,12 @@ namespace NewFine.Application
             }
             return service.FindList(expression, pagination);
         }
-        public DailyPlanEntity GetForm(string keyValue)
+        /// <summary>
+        /// 根据主键得到实体。这里的参数可以是数字，并且与数据库字段对应才可以，比如换成string就会报错
+        /// </summary>
+        /// <param name="keyValue"></param>
+        /// <returns></returns>
+        public DailyPlanEntity GetForm(int keyValue)
         {
             return service.FindEntity(keyValue);
         }
@@ -65,7 +70,7 @@ namespace NewFine.Application
         {
             if (!string.IsNullOrEmpty(keyValue))
             {
-
+                roleEntity.PlanId = keyValue.ToInt();
                 service.Update(roleEntity);
             }
             else

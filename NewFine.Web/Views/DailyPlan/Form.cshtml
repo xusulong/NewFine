@@ -116,6 +116,18 @@
                         <textarea id="PlanContent" name="PlanContent" class="form-control" style="height: 160px;"></textarea>
                     </td>
                 </tr>
+                <tr>
+                    <th class="formTitle">创建时间：</th>
+                    <td class="formValue">
+                        <input type="text" name="AddTime" class="form-control Wdate" id="AddTime"  readonly="readonly"
+                               onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="yyyy-MM-dd HH:mm:ss">
+                    </td>
+                    <th class="formTitle">截止时间：</th>
+                    <td class="formValue">
+                        <input type="text" name="DeadLine" class="form-control Wdate" id="DeadLine"
+                               onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="yyyy-MM-dd HH:mm:ss">
+                    </td>
+                </tr>
             </table>
         </div>
     </div>

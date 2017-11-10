@@ -41,7 +41,7 @@ namespace NewFine.Web.Controllers
         }
         [HttpGet]
         [HandlerAjaxOnly]
-        public ActionResult GetFormJson(string keyValue)
+        public ActionResult GetFormJson(int keyValue)
         {
             var data = dailyPlanApp.GetForm(keyValue);
             return Content(data.ToJson());
