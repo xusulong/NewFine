@@ -43,7 +43,7 @@ namespace NewFine.Application
         {
             return service.FindEntity(keyValue);
         }
-        public void DeleteForm(UserEntity userEntity, UserLogOnEntity userLogOnEntity, string keyValue)
+        public void SubmitForm(UserEntity userEntity, UserLogOnEntity userLogOnEntity, string keyValue)
         {
             if (!string.IsNullOrEmpty(keyValue))
             {
@@ -53,7 +53,16 @@ namespace NewFine.Application
             {
                 userEntity.Create();
             }
-            service.SubmitForm(userEntity, userLogOnEntity, keyValue);
+            service.SubmitForm(userEntity,userLogOnEntity,keyValue);
+        }
+        public void UpdateForm(UserEntity userEntity)
+        {
+            service.Update(userEntity);
+        }
+
+        public void DeleteForm(string keyValue)
+        {
+            service.DeleteFrom(keyValue);
         }
         /// <summary>
         /// 检查用户名，密码。登录成功之外，用抛异常的方式，向调用者
