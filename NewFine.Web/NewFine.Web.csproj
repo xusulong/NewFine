@@ -465,6 +465,9 @@
     <Content Include="Views\User\index.cshtml" />
     <Content Include="Views\User\Form.cshtml" />
     <Content Include="Views\User\RevisePassword.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="ReadMe\newfine.bak" />
+    <Content Include="ReadMe\NFine笔记.docx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NewFine.Application\NewFine.Application.csproj">

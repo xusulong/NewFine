@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using NewFine.Entity;
 using NewFine.Application;
 using NewFine.Data;
@@ -92,6 +88,24 @@ namespace NewFine.Web.Controllers
         public ActionResult Info()
         {
             return View();
+        }
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [HandlerAjaxOnly]
+        public ActionResult Register(string F_Account,string F_UserPassword)
+        {
+            UserEntity userEntity = new UserEntity();
+            userEntity.F_Account = F_Account;
+            userEntity.F_Id = F_Account;
+            userEntity.F_EnabledMark = true;
+            UserLogOnEntity userLogOnEntity = new UserLogOnEntity();
+            userLogOnEntity.F_UserPassWord = F_UserPassword;
+            userApp.SubmitForm(userEntity, userLogOnEntity,"");
+            return Success("注册账户成功");
         }
     }
 }
